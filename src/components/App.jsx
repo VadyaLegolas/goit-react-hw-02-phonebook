@@ -1,16 +1,25 @@
-export const App = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
-  );
-};
+import { Component } from 'react';
+
+export class App extends Component {
+  state = {
+    contacts: [],
+    name: '',
+  };
+
+  handleChange = e => {};
+
+  render() {
+    return (
+      <>
+      <form>
+        <input type="text" name="name" required onChange={this.handleChange} />
+        <button>Add contact</button>
+      </form>
+      <h2>Contacts</h2>
+      <ul>
+        <li></li>
+      </ul>
+      </>
+    );
+  }
+}

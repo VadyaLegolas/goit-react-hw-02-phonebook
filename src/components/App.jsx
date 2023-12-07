@@ -22,9 +22,9 @@ export class App extends Component {
     this.setState(prevState => {
       const normalizeName = name.toLowerCase();
       if (
-        prevState.contacts.filter(
+        prevState.contacts.find(
           contact => contact.name.toLowerCase() === normalizeName
-        ).length > 0
+        )
       ) {
         alert(`${name} is already in contacts`);
         return;

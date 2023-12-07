@@ -18,9 +18,21 @@ export class App extends Component {
   addContact = (name, number) => {
     const id = nanoid();
     const contact = { id, name, number };
-    this.setState(prevState => ({
-      contacts: [contact, ...prevState.contacts],
-    }));
+
+    this.setState(prevState => {
+      const normalizeName = name.toLowerCase();
+      if (
+        prevState.contacts.filter(
+          contact => contact.name.toLowerCase() === normalizeName
+        ).length > 0
+      ) {
+        alert(`${name} is already in contacts`);
+        return;
+      }
+      return {
+        contacts: [contact, ...prevState.contacts],
+      };
+    });
   };
 
   deleteContact = contactId => {
@@ -49,7 +61,10 @@ export class App extends Component {
         <ContactForm onSubmit={this.addContact} />
         <h2>Contacts</h2>
         <Filter value={this.state.filter} onChange={this.changeFilter} />
-        <ContactList contacts={visibleContacts} onDeleteContact={this.deleteContact}/>
+        <ContactList
+          contacts={visibleContacts}
+          onDeleteContact={this.deleteContact}
+        />
       </>
     );
   }

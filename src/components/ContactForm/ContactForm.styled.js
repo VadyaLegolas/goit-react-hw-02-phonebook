@@ -9,7 +9,9 @@ export const Form = styled.form`
 export const Label = styled.label``;
 export const Input = styled.input`
   display: block;
-  border-radius: 5px;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   margin-top: 5px;
   &:hover,
   &:focus {
@@ -21,6 +23,7 @@ export const Input = styled.input`
 export const Button = styled.button`
   margin-top: 10px;
   cursor: pointer;
+  background-color: orange;
   &:hover,
   &:focus {
     box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);

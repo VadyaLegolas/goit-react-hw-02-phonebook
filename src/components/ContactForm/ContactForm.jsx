@@ -22,7 +22,7 @@ export class ContactForm extends Component {
 
   render() {
     return (
-      <Form autoComplete='off' onSubmit={this.handleSubmit}>
+      <Form autoComplete="off" onSubmit={this.handleSubmit}>
         <Label>
           Name
           <Input

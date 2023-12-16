@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { Button, Form, Input, Label } from './ContactForm.styled';
+import { Button, FormContact, Input, Label } from './ContactForm.styled';
 
 export class ContactForm extends Component {
   state = {
@@ -22,7 +22,7 @@ export class ContactForm extends Component {
 
   render() {
     return (
-      <Form autoComplete="off" onSubmit={this.handleSubmit}>
+      <FormContact autoComplete="off" onSubmit={this.handleSubmit}>
         <Label>
           Name
           <Input
@@ -47,7 +47,7 @@ export class ContactForm extends Component {
         </Label>
 
         <Button type="submit">Add contact</Button>
-      </Form>
+      </FormContact>
     );
   }
 }

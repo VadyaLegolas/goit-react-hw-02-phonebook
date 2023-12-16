@@ -10,18 +10,17 @@ export class App extends Component {
     filter: '',
   };
 
-  addContact = (name, number) => {
-    const id = nanoid();
-    const contact = { id, name, number };
+  addContact = data => {
+    const contact = { id: nanoid(), ...data };
 
     this.setState(prevState => {
-      const normalizeName = name.toLowerCase();
+      const normalizeName = contact.name.toLowerCase();
       if (
         prevState.contacts.find(
-          contact => contact.name.toLowerCase() === normalizeName
+          ({ name }) => name.toLowerCase() === normalizeName
         )
       ) {
-        alert(`${name} is already in contacts`);
+        alert(`${contact.name} is already in contacts`);
         return;
       }
       return {
@@ -32,7 +31,7 @@ export class App extends Component {
 
   deleteContact = contactId => {
     this.setState(prevState => ({
-      contacts: prevState.contacts.filter(contact => contact.id !== contactId),
+      contacts: prevState.contacts.filter(({ id }) => id !== contactId),
     }));
   };
 

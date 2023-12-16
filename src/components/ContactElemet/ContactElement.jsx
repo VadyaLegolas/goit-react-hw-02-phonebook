@@ -5,7 +5,7 @@ export const ContactElement = ({ id, name, number, onDeleteContact }) => {
     <ListItem>
       <Div>
         {name}: {number}
-        <Button onClick={() => onDeleteContact(id)}>Удалить</Button>
+        <Button onClick={() => onDeleteContact(id)}>Delete</Button>
       </Div>
     </ListItem>
   );

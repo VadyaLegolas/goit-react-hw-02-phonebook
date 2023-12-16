@@ -22,10 +22,11 @@ export const Div = styled.div`
 export const Button = styled.button`
   border-radius: 10px;
   background-color: red;
-  color: yellow;
+  color: white;
 
   &:hover,
   &:focus {
+    color: yellow;
     background-color: darkred;
     cursor: pointer;
   }
